@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaJam House Jobs</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initialscale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div class='container'>
+        <h1 class='display-4'>JavaJam Coffee House</h1>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img src="javajamlogo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    JavaJam
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="music.html">Music</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="jobs.html">Jobs</a>
+                    </li>
+                  </ul>
+                  
+                </div>
+              </nav>
+        </header>
+        <main>
+            <div class="jumbotron">
+                <h2>JavaJam House Jobs</h2>
+                <p>Want to work at JavaJam? Fill out the form below to start your application. Required fields are marked with an asterisk (*).</p>
+                <form method="POST" ="http://webdevbasics.net/scripts/javajam8.php">
+                    <!-- use label -->
+            
+                    *Name:
+                    <br>
+                    <input type="text" name="name" id="name" required>
+            
+                    <br>
+                    *E-mail
+                    <br>
+                    <input type="text" name="email" id="email" required>
+            
+                    <br>
+                    *Experience:
+                    <br>
+                    <textarea name="experience" id="experience" cols="30" rows="10" required></textarea>
+            
+                    <br>
+                    <!-- <select name="position" id="position">
+                        <option value="barista">Barista</option>
+                        <option value="Waiter">Waiter</option>
+                    </select> -->
+                    <label for="select-choice">Select job position:</label>
+                    <script>
+                        var jobclass = [
+                            {
+                                code: 'ba',
+                                name: 'Barista',
+                                scope: 'Preparing and serving hot and cold drinks such as coffee, tea, artisan and speciality beverages'
+                            },
+                            {
+                                code: 'ma',
+                                name: 'Manager',
+                                scope: 'Managing day-to-day operations of the cafe'
+                            },
+                            {
+                                code: 'tr',
+                                name: 'Trainee',
+                                scope: 'Supporting daily operations of the cafe'
+                            }
+                        ]
+
+                        document.write('<select>')
+                        jobclass.forEach(function(job) {
+                            document.write('<option value="' + job.code + '">' + job.name + '</option>')
+                        })
+                        document.write('</select>')
+
+                        const dropdown = document.querySelector('select')
+                        dropdown.addEventListener('change', function(e) {
+                            const scope = document.querySelector('#jobScope')
+                            jobclass.forEach(function(job) {
+                                if (job.code == e.target.value) {
+                                    scope.textContent = job.scope
+                                }
+                            })                        
+                        })
+                    </script>
+                    <p id='jobScope'>Preparing and serving hot and cold drinks such as coffee, tea, artisan and speciality beverages</p>
+                    <br>
+                    <br>
+                    Preferred Interview Date and Time:
+                    <input type="datetime" name="" id="">
+            
+                    <br>
+                    <br>
+                    Upload your photo:
+                    <input type="file" name="" id="">
+            
+                    <br>
+                    <br>
+                    <button>Apply Now</button>
+                </form>
+            </div>
+            <hr>
+            <footer class="container text-center font-italic">
+                <p> Copyright &copy; 2021 JavaJam Coffee House
+                <a href="mailto:javajam@gmail.com">javajam@gmail.com</a> </p>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
